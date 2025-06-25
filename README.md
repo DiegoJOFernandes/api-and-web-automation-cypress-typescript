@@ -46,6 +46,48 @@ api.config.ts
 
 ---
 
+### 🔐 Variáveis de Ambiente (.env)
+
+> ⚠️ Não é uma boa prática subir o arquivo `.env` para o repositório, pois contém dados sensíveis (URLs, e‑mails e senhas).
+> Por isso, este arquivo não está versionado e não deve ser commitado.
+
+### ✅ O que fazer
+
+1. Crie um arquivo `.env` **localmente** para rodar a automação:
+
+   ```bash
+   API_URL=https://serverest.dev/
+   API_EMAIL=fulano@qa.com
+   API_PASSWORD=teste
+   WEB_URL=https://front.serverest.dev/
+   ```
+2. Solicite as chaves (`API_URL`, `API_EMAIL`, `API_PASSWORD`, `WEB_URL`) à equipe responsável para preenchê-las corretamente.
+3. No GitHub Actions, configure as variáveis como **GitHub Secrets** para não expor dados sensíveis no repositório.
+
+---
+
+### 🗄️ Massa de Dados (`data`) vs `fixtures`
+
+> ⚡️ Não estamos utilizando a pasta padrão `fixtures`, mas sim a pasta `data`.
+> A decisão foi feita para centralizar e organizar todas as massas de dados e payloads usados nos testes, facilitando manutenção e entendimento.
+
+### ✅ Por quê?
+
+* Os arquivos em `data` contém todas as massas de dados e funções para gerar dados dinâmicos (usando [Faker.js](https://fakerjs.dev/)), promovendo testes mais consistentes e menos duplicações.
+* Melhor legibilidade e controle sobre dados de teste, especialmente quando são usados em múltiplos endpoints ou cenários.
+
+### 📁 Resultado
+
+```
+cypress/
+├─ e2e/
+├─ data/            <-- Dados e payloads centralizados aqui
+├─ support/
+├─ interfaces/
+```
+
+---
+
 ## ⚡️ Bibliotecas Utilizadas
 
 * **Cypress** – Framework de testes end-to-end e integração.
