@@ -1,0 +1,34 @@
+node_modules
+# Node Modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test Results
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+
+# Build Output
+dist/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# OS Generated
+.DS_Store
+Thumbs.db
+
+# Editor Specific
+.vscode/
+.idea/
+
+# Others
+cypress/.cache/

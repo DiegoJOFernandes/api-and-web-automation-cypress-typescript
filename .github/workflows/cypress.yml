@@ -1,0 +1,42 @@
+name: Cypress E2E
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  test-api:
+    name: 🐍 Testes de API
+    runs-on: ubuntu-latest
+    steps:
+      - name: ✅ Checkout
+        uses: actions/checkout@v3
+      - name: ⚡️ Instalar Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - name: 📦 Instalar Dependências
+        run: npm ci
+      - name: 🐍 Rodar Testes de API
+        run: npm run test:api
+
+  test-web:
+    name: 🌐 Testes Web
+    runs-on: ubuntu-latest
+    steps:
+      - name: ✅ Checkout
+        uses: actions/checkout@v3
+      - name: ⚡️ Instalar Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - name: 📦 Instalar Dependências
+        run: npm ci
+      - name: 🌐 Rodar Testes Web
+        run: npm run test:web
