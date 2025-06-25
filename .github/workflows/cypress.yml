@@ -20,15 +20,15 @@ jobs:
       - name: ⚡️ Instalar Node
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "20"
       - name: 📦 Instalar Dependências
-        run: npm ci
+        run: npm i
       - name: 🐍 Rodar Testes de API
         run: npm run test:api
         env:
-          API_URL: ${{ vars.API_URL }}
-          API_EMAIL: ${{ vars.API_EMAIL }}
-          API_PASSWORD: ${{ vars.API_PASSWORD }}
+          API_URL: ${{ secrets.API_URL }}
+          API_EMAIL: ${{ secrets.API_EMAIL }}
+          API_PASSWORD: ${{ secrets.API_PASSWORD }}
 
   test-web:
     name: 🌐 Testes Web
@@ -39,10 +39,10 @@ jobs:
       - name: ⚡️ Instalar Node
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "20"
       - name: 📦 Instalar Dependências
         run: npm ci
       - name: 🌐 Rodar Testes Web
         run: npm run test:web
         env:
-          WEB_URL: ${{ vars.WEB_URL }}
+          WEB_URL: ${{ secrets.WEB_URL }}
