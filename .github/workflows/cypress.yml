@@ -25,6 +25,10 @@ jobs:
         run: npm ci
       - name: 🐍 Rodar Testes de API
         run: npm run test:api
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          API_EMAIL: ${{ secrets.API_EMAIL }}
+          API_PASSWORD: ${{ secrets.API_PASSWORD }}
 
   test-web:
     name: 🌐 Testes Web
@@ -40,3 +44,5 @@ jobs:
         run: npm ci
       - name: 🌐 Rodar Testes Web
         run: npm run test:web
+        env:
+          WEB_URL: ${{ secrets.WEB_URL }}
