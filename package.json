@@ -1,7 +1,7 @@
 {
-  "name": "api-web-automation-cypress",
+  "name": "api-and-web-automation-cypress-typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automação de testes de API e WEB para o ServeRest utilizando Cypress + TypeScript.",
   "main": "index.js",
   "scripts": {
     "test:web": "npx cypress run -C cypress.config.ts",
@@ -9,9 +9,22 @@
     "test:open:web": "npx cypress open -C cypress.config.ts",
     "test:open:api": "npx cypress open -C api.config.ts"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cypress",
+    "automation",
+    "testing",
+    "api",
+    "web",
+    "typescript",
+    "qa"
+  ],
+  "author": "Diego J O Fernandes",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DiegoJOFernandes/api-and-web-automation-cypress-typescript.git"
+  },
+  "homepage": "https://github.com/DiegoJOFernandes/api-and-web-automation-cypress-typescript#readme",
   "devDependencies": {
     "@faker-js/faker": "^9.8.0",
     "@types/node": "^24.0.3",
