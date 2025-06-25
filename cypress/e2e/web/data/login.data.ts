@@ -1,5 +1,4 @@
 import { LoginData } from "../interfaces/login.data";
-import { faker } from "@faker-js/faker";
 
 export const usuarioAdmin: LoginData = {
   email: Cypress.env("API_EMAIL"),
