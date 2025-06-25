@@ -23,21 +23,12 @@ jobs:
           node-version: "18"
       - name: 📦 Instalar Dependências
         run: npm ci
-      - name: 🔍 Verificar Secrets
-        run: |
-          echo "API_URL: ${API_URL}"
-          echo "API_EMAIL configurada? ${API_EMAIL:+SIM}"
-          echo "API_PASSWORD configurada? ${API_PASSWORD:+SIM}"
-        env:
-          API_URL: ${{ secrets.API_URL }}
-          API_EMAIL: ${{ secrets.API_EMAIL }}
-          API_PASSWORD: ${{ secrets.API_PASSWORD }}
       - name: 🐍 Rodar Testes de API
         run: npm run test:api
         env:
-          API_URL: ${{ secrets.API_URL }}
-          API_EMAIL: ${{ secrets.API_EMAIL }}
-          API_PASSWORD: ${{ secrets.API_PASSWORD }}
+          API_URL: ${{ vars.API_URL }}
+          API_EMAIL: ${{ vars.API_EMAIL }}
+          API_PASSWORD: ${{ vars.API_PASSWORD }}
 
   test-web:
     name: 🌐 Testes Web
@@ -54,4 +45,4 @@ jobs:
       - name: 🌐 Rodar Testes Web
         run: npm run test:web
         env:
-          WEB_URL: ${{ secrets.WEB_URL }}
+          WEB_URL: ${{ vars.WEB_URL }}
