@@ -1,15 +1,15 @@
 import { CarrinhoPage } from "../../pages/produtos/carrinho.page";
-import { usuarioCadastrado } from "../../data/login.data";
 import { LoginPage } from "../../pages/login/login.page";
+import { usuarioComum } from "../../data/login.data";
 
-describe("Carrinho de Compras - ServeRest Web", () => {
+describe("Carrinho de Compras - ServeRest Web | Adição e Limpeza de produto", () => {
   const carrinhoPage = new CarrinhoPage();
   const loginPage = new LoginPage();
 
   before(() => {
     loginPage.visit();
-    loginPage.fillEmail(usuarioCadastrado.email);
-    loginPage.fillPassword(usuarioCadastrado.password);
+    loginPage.fillEmail(usuarioComum.email);
+    loginPage.fillPassword(usuarioComum.password);
     loginPage.clickLogin();
   });
 

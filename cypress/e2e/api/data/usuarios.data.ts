@@ -3,7 +3,7 @@ import { faker } from "@faker-js/faker";
 
 export const usuarioValido: Usuario = {
   nome: faker.person.fullName(),
-  email: faker.internet.email(), 
-  password: "teste",
+  email: faker.internet.email().toLowerCase(), 
+  password: "Teste@123456",
   administrador: "true",
 };
