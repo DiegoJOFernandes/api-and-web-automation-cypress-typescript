@@ -11,7 +11,7 @@ describe("POST /login - Autenticação", () => {
   });
 
   it("Deve retornar 401 para e-mail ou senha inválidos", () => {
-    postLogin({email: "emailerrado", password: "senhaerrada"}).then((response) => {
+    postLogin({email: "teste@teste.com", password: "senhaerrada"}).then((response) => {
       expect(response.status).to.eq(401);
       expect(response.body).to.have.property("message", "Email e/ou senha inválidos");
     });
