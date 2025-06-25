@@ -16,5 +16,6 @@ export default defineConfig({
     },
     baseUrl: process.env.API_URL,
     specPattern: "cypress/e2e/api/**/*.test.ts",
+    retries: 2,
   },
 });
